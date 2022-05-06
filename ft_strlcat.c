@@ -5,32 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 16:46:57 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 16:48:59 by nlorion          ###   ########.fr       */
+/*   Created: 2022/05/06 15:07:26 by nlorion           #+#    #+#             */
+/*   Updated: 2022/05/06 15:40:16 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int     i;
-	unsigned int     dest_len;
-	unsigned int     src_len;
-	
-	i = 0;
-	dest_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
-	if (dest_len > size - 1)
-		return (src_len + size);
-	else
+	char	*d;
+	const char	*s;	
+	size_t	n;	
+	size_t	dlen;
+
+	d = dst;
+	s = src;
+	n = size;	
+	while (n-- != 0 && *d != '\0')
+		d++;
+	dlen = d - dst;
+	n = size - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(s));
+	while (*s != '\0')
 	{
-		while (dest_len < size - 1 && src[i] != 0)
-		{	
-			dest[dest_len] = src[i];
-			dest_len++;
-			i++;
+		if (n != 1)
+		{
+			*d++ = *s;
+			n--;
 		}
+		s++;
 	}
-	return (dest_len);
+	*d = '\0';
+	return (dlen + (s - src));
+}
+
+int	main(void)
+{
+	char	dst[50];
+	char	*src = "bonjour";
+
+	printf("%ld", ft_strlcat(dst, src, 20));
 }

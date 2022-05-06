@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 17:25:29 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 17:36:33 by nlorion          ###   ########.fr       */
+/*   Created: 2022/05/05 19:24:50 by nlorion           #+#    #+#             */
+/*   Updated: 2022/05/06 18:08:21 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+char	*ft_strdup(const char *str)
 {
-	size_t		i;
-	const char	*s;
+	int		len;
+	char	*copy;
 
-	s = (const char *)str;
-	i = 0;
-	while (i < n)
-	{
-		if (s[i] == c)
-			return ((void *)&s[i]);
-		i++;
-	}
-	return (NULL);
+	len = 0;
+	while (str[len])
+		len++;
+	copy = (char *)malloc(sizeof(*str) * (len + 1));
+	if (!copy)
+		return (NULL);
+	while (*str)
+		*copy++ = *str++;
+	*copy = '\0';
+	return (copy);
 }
+/*
+int     main (void)
+{
+    char    s1[20];
+    char    s2[20] = "Bonjour";
+
+    printf("%s\n", ft_strdup(s2));
+}
+*/
