@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:17:17 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 13:21:39 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/06 16:29:03 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -17,8 +17,7 @@
 # include <unistd.h>
 # include <bsd/string.h>
 # include <string.h>
-
-unsigned int			ft_strlcat(char *dest, char *src, unsigned int size);
+#include <stddef.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -31,6 +30,7 @@ int		ft_strncmp(unsigned char *s1, unsigned char *s2, int n);
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(unsigned int nmemb, unsigned int size);
