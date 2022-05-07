@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:17:17 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 17:29:05 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/07 17:43:46 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <bsd/string.h>
 # include <string.h>
-#include <stddef.h>
+# include <stddef.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
