@@ -1,37 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/07 17:34:28 by nlorion           #+#    #+#             */
+/*   Updated: 2022/05/07 17:41:56 by nlorion          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int     ft_strlen(char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    int     i;
+	char			*tab;
+	unsigned int	i;
+	char			*str;
+	unsigned int	strlen;
 
-    i = 0;
-    while (str[i] != '\0')
-        i++;
-    return (i);
+	str = (char *)s;
+	strlen = ft_strlen(str);
+	if (start > strlen || len == 0)
+		return (NULL);
+	str += start;
+	tab = (char *)malloc(sizeof(char) * (len + 1));
+	if (len > (strlen - start))
+		len = strlen - start;
+	i = 0;
+	while (i < len && str[i] != '\0')
+	{
+		tab[i] = *str;
+		str++;
+		i++;
+	}
+	tab[i] = '\0';
+	return (tab);
 }
-
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+/*
+int	main(void)
 {
-    char    *tab;
-    unsigned int    i;
-    char    *str;
-    unsigned int     strlen;
+	char	*dst = "hello";
 
-    str = (char*)s;
-    strlen = ft_strlen(str);
-    if (start > strlen || len == 0)
-        return (NULL);
-    str += start; 
-    tab = (char*)malloc(sizeof(char) * (len + 1));
-    if (len > (strlen - start))
-        len = strlen - start;
-    i = 0;
-    while (i < len && str[i] != '\0')
-    {
-        tab[i] = *str;
-        str++;
-        i++;
-    }
-    tab[i] = '\0';
-    return (tab);
+	printf("%s", ft_substr(dst, 0, 2));
 }
+*/

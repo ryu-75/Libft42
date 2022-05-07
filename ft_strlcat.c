@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:07:26 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 15:40:16 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/07 17:30:54 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*d;
-	const char	*s;	
-	size_t	n;	
-	size_t	dlen;
+	char		*d;
+	const char	*s;
+	size_t		n;	
+	size_t		dlen;
 
 	d = dst;
 	s = src;
-	n = size;	
+	n = size;
 	while (n-- != 0 && *d != '\0')
 		d++;
 	dlen = d - dst;
@@ -44,7 +44,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 int	main(void)
 {
 	char	dst[50];
-	char	*src = "bonjour";
+	char	*src;
 
+	src = "bonjour";
 	printf("%ld", ft_strlcat(dst, src, 20));
 }

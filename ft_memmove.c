@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:01:56 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 16:15:12 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/07 16:58:48 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*d;
-	const char		*lasts;
+	const char	*lasts;
 	char		*lastd;
 	const char	*s;
 
