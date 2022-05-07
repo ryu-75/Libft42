@@ -6,21 +6,11 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:12:38 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/03 18:39:47 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/07 21:00:07 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen(char const *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 int	set_ignore(char const *s1, char const c)
 {
@@ -61,7 +51,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (tab);
 }
-
+/*
 int	main(void)
 {
 	char	*s;
@@ -72,3 +62,4 @@ int	main(void)
 	printf("%s\n", ft_strtrim(s, t));
 	return (0);
 }
+*/

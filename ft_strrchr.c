@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:21:38 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 17:23:00 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/07 22:42:57 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*s == ch)
 			tmp = (char *)s;
-		if (*s == '\0')
+		else if (*s == '\0')
 			return (tmp);
 		s++;
 	}
@@ -32,11 +32,10 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 /*
-int     main(void)
+char	main(void)
 {
-    char    *t = "hello";
-
-    printf("%s", ft_strrchr(t, 5));
-    return (0);
+	char	*s = "ltripouiel";
+	
+	printf("%s", ft_strrchr(s, 'z'));
 }
 */

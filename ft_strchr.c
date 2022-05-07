@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:49:46 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 17:21:15 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/07 22:53:46 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
+	if (c == 0)
+		return ((char *)s);
 	return (NULL);
 }

@@ -3,37 +3,66 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: avassor <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/06 12:16:38 by avassor           #+#    #+#              #
-#    Updated: 2022/05/06 13:22:00 by avassor          ###   ########.fr        #
+#    Created: 2022/05/02 18:03:30 by awallet           #+#    #+#              #
+#    Updated: 2022/05/07 22:19:31 by nlorion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c
-				
-OBJS		=	$(SRCS:.c=.o)
+NAME = libft.a
 
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+SRC =   ft_atoi.c \
+       		ft_bzero.c \
+		ft_calloc.c \
+		ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isdigit.c \
+		ft_isprint.c \
+		ft_memmove.c \
+		ft_memcmp.c \
+		ft_memset.c \
+		ft_strchr.c \
+		ft_strdup.c \
+		ft_strlcat.c \
+		ft_strlcpy.c \
+		ft_strncmp.c \
+		ft_strnstr.c \
+		ft_tolower.c \
+		ft_toupper.c \
+		ft_substr.c \
+		ft_memcpy.c \
+		ft_memchr.c \
+		ft_strlen.c \
+		ft_strtrim.c \
+		ft_strrchr.c \
+		       
+OBJS = $(SRC:.c=.o)
 
-NAME			= libft.a
+COMPILER_COMMAND = gcc
 
-all:			$(NAME)
+AR = ar rcs
 
-$(NAME):		$(OBJS)
-					ar rcs $(NAME) $(OBJS)
+RM = rm -f
+
+
+CFLAGS = -Wall -Werror -Wextra
+
+.c.o = $(COMPILER_COMMAND) $(CFLAGS) -c $< -o $(<:.c=.o)
+
+
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
+
+all:	$(NAME)
 
 clean:
-					$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
-fclean:			clean
-					$(RM) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 
-re:				fclean $(NAME)
+re:	fclean all
 
-# bonus:			$(OBJS) $(BONUS_OBJS)
-#				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-.PHONY:			all clean fclean re bonus
+.PHONY : all bonus clean fclean re

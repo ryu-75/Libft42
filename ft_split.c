@@ -6,13 +6,13 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:58:15 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 18:05:02 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/07 18:35:07 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strchr(char const *s, char const c)
+int	ft_strsearch(char const *s, char const c)
 {
 	int	i;
 
@@ -26,30 +26,20 @@ int	ft_strchr(char const *s, char const c)
 	return (0);
 }
 
-char	**ft_split(char const *s, char const c)
+void	ft_split2(char const *s, char const c, char **tab)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		len;
-	char	**tab;
+	int	i;
+	int	j;
+	int	k;
 
-	i = 0;
-	len = ft_strlen(s);
-	tab = malloc((len + 1) * sizeof(char *));
-	while (i <= lens)
-	{
-		tab[i] = malloc((len + 1) * sizeof(char));
-		i++;
-	}
 	i = 0;
 	j = 0;
 	k = 0;
 	while (*s != '\0')
 	{
-		while (ft_strchr(c, s[i]) == 1 && *s)
-			s++;
-		while (ft_strchr(c, s[i]) == 0 && s[i])
+		while (ft_strsearch(&c, s[i]) == 1 && s[i])
+			i++;
+		while (ft_strsearch(&c, s[i]) == 0 && s[i])
 		{
 			tab[j][k] = s[i];
 			k++;
@@ -61,14 +51,32 @@ char	**ft_split(char const *s, char const c)
 			j++;
 	}
 	tab[j] = 0;
+}
+
+char	**ft_split(char const *s, char const c)
+{
+	int		i;
+	int		len;
+	char	**tab;
+
+	i = 0;
+	len = ft_strlen(s);
+	tab = malloc((len + 1) * sizeof(char *));
+	while (i <= len)
+	{
+		tab[i] = malloc((len + 1) * sizeof(char));
+		i++;
+	}
+	i = 0;
+	ft_split2(s, c, tab);
 	return (tab);
 }
-/*
+
 int main(void)
 {
     char    *s = "bonjour je suis une table";
-    char    *c = ",";
-    char    **tab = ft_split(s, c);
+    const char    *c = ",";
+    char    **tab = ft_split(s, *c);
 
     int i = 0;
 
@@ -79,4 +87,3 @@ int main(void)
     }
     return (0);
 }
-*/
