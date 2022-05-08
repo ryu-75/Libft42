@@ -35,8 +35,10 @@ SRC =   ft_atoi.c \
 		ft_memcpy.c \
 		ft_memchr.c \
 		ft_strlen.c \
-		ft_strtrim.c \
-		ft_strrchr.c \
+#		ft_strtrim.c \
+#		ft_strrchr.c \
+#		ft_strjoin.c \
+#		ft_split.c \
 		       
 OBJS = $(SRC:.c=.o)
 

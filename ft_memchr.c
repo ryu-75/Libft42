@@ -14,16 +14,24 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t		i;
-	const char	*str;
+	const unsigned char	*str;
 
-	str = (const char *)s;
-	i = 0;
-	while (i < n)
+	str = (const unsigned char *)s;
+	if (n != 0)
 	{
-		if (str[i] == c)
-			return ((void *)&str[i]);
-		i++;
+		while (n-- != 0)
+		{
+			if (*str == (unsigned char)c)
+				return ((void *)str);
+			str++;
+		}
 	}
 	return (NULL);
 }
+/*
+int	main(void)
+{
+	char s[] = {0, 1, 2, 3, 4, 5};
+	printf("%p\n", ft_memchr(s, 2, 3));
+}
+*/

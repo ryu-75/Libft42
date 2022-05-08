@@ -48,7 +48,7 @@ char	*ft_strcat(const char *s1, const char *s2)
 	return (str1);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const *s2)
 {
 	int		len;
 	char	*tab;

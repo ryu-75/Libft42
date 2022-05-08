@@ -21,10 +21,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	p2 = s2;
 	if (n != 0)
 	{
-		while (n-- != 0)
+		while (n-- > 0)
 		{
 			if (*p1++ != *p2++)
-				return (1);
+			{
+				if (p1[-1] < p2[-1])
+					return (-1);
+				else
+					return (1);
+			}
 		}
 	}
 	return (0);
