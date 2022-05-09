@@ -6,7 +6,7 @@
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 18:03:30 by awallet           #+#    #+#              #
-#    Updated: 2022/05/07 22:19:31 by nlorion          ###   ########.fr        #
+#    Updated: 2022/05/09 14:46:54 by nlorion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,8 @@ SRC =   ft_atoi.c \
 		ft_memcpy.c \
 		ft_memchr.c \
 		ft_strlen.c \
+		ft_strrchr.c \
 #		ft_strtrim.c \
-#		ft_strrchr.c \
 #		ft_strjoin.c \
 #		ft_split.c \
 		       
