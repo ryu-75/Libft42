@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:21:38 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/09 12:55:32 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/09 14:59:22 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,23 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*tmp;
+	char	*ptr;
 	char	ch;
 
 	tmp = NULL;
 	ch = c;
+	ptr = strchr(s, c);
+	if (c == '\0')
+		return (strchr(s, '\0'));
+	if (ptr != NULL)
+		tmp = ptr;
 	while (*s)
 	{
-		if (*s == ch)
+		if (*s == c)
 			tmp = (char *)s;
-		else if (*s == '\0')
+		if (*s == '\0')
 			return (tmp);
 		s++;
 	}
-	/*
-	while (*s != ch)
-	{
-		if (!*s)
-			return (NULL);
-		s++;
-	}
-	*/
-	if (*tmp != '\0')
-		return (tmp);
-	return (NULL);
-}
-char	main(void)
-{
-	char	*s = "ltripouiel";
-	
-	printf("%s", ft_strrchr(s, 'l'));
+	return (tmp);
 }
