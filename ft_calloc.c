@@ -6,43 +6,25 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:59:02 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/06 17:57:17 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/09 12:33:06 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-void	*ft_memset(void *s, int c, size_t n)
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned int	i;
-	char		*str;
+	void	*ptr;
 
-	str = (char *)s;
-	i = 0;
-	while (n != i)
-	{
-		str[i] = c;
-		++i;
-	}
-	return (s);
-}   
-
-void    ft_bzero(void *s, unsigned int n)
-{   
-    memset((void *)s, 0, (unsigned int)n);
-}
-*/
-void	*ft_calloc(unsigned int nmemb, size_t size)
-{
-	int	*ptr;
-
+	ptr = malloc(nmemb * size);
 	if (nmemb == 0 || size == 0)
 	{
-		nmemb = 1;
-		size = 1;
+		return (NULL);
 	}
-	ptr = malloc(nmemb * size);
-	if (ptr)
-		ft_bzero(ptr, nmemb * size);
+	if (nmemb == SIZE_MAX && size == SIZE_MAX)
+		return (NULL);
+	if (!ptr)
+		return (ptr);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
