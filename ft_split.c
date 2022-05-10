@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+void	freeTab(char **str)
+{
+	while (*str != NULL)
+		free(*str++);
+	free(str);
+}
+
 int	ft_strsearch(char const *s, char const c)
 {
 	int	i;
@@ -37,9 +44,9 @@ void	ft_split2(char const *s, char const c, char **tab)
 	k = 0;
 	while (*s != '\0')
 	{
-		while (ft_strsearch(&c, s[i]) == 1 && s[i])
-			i++;
 		while (ft_strsearch(&c, s[i]) == 0 && s[i])
+			i++;
+		while (ft_strsearch(&c, s[i]) == 1 && s[i])
 		{
 			tab[j][k] = s[i];
 			k++;
@@ -67,23 +74,20 @@ char	**ft_split(char const *s, char const c)
 		tab[i] = malloc((len + 1) * sizeof(char));
 		i++;
 	}
+	if (!tab)
+		return (NULL);
 	i = 0;
 	ft_split2(s, c, tab);
+	freeTab(tab);
 	return (tab);
 }
-
+/*
 int main(void)
 {
-    char    *s = "bonjour je suis une table";
-    const char    *c = ",";
-    char    **tab = ft_split(s, *c);
-
-    int i = 0;
-
-    while (tab[i] != 0)
-    {
-        printf("%s", tab[i]);
-        i++;    
-    }
+   // char    **tab = ft_split("  tripouille  42  ", ' ');
+	char	**str = split("  tripouille  42  ", ' ');
+    while (*str)
+        printf("%s", *str++);
     return (0);
 }
+*/
