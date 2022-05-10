@@ -6,42 +6,51 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 17:34:28 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/07 17:41:56 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/10 13:00:05 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <mcheck.h>
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char			*tab;
-	unsigned int	i;
-	char			*str;
-	unsigned int	strlen;
+	size_t		i;
+	size_t		j;
+	size_t		strlen;
 
-	str = (char *)s;
-	strlen = ft_strlen(str);
-	if (start > strlen || len == 0)
-		return (NULL);
-	str += start;
-	tab = (char *)malloc(sizeof(char) * (len + 1));
-	if (len > (strlen - start))
-		len = strlen - start;
-	i = 0;
-	while (i < len && str[i] != '\0')
+	strlen = ft_strlen(s);
+	tab = NULL;
+	tab = (char *)malloc(sizeof(*s) * (len + 1));
+	if (start >= strlen)
 	{
-		tab[i] = *str;
-		str++;
+		tab = malloc(sizeof(char));
+		*tab = 0;
+		return (tab);
+	}
+	if (strlen < (start + len))
+		len = strlen - start;
+	if (*s == 0)
+		return (NULL);
+	if (!tab)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (i >= start && j < len)
+		{
+			tab[j] = s[i];
+			j++;
+		}
 		i++;
 	}
-	tab[i] = '\0';
+	tab[j] = '\0';
 	return (tab);
 }
 /*
 int	main(void)
 {
-	char	*dst = "hello";
-
-	printf("%s", ft_substr(dst, 0, 2));
+	printf("%s", ft_substr("tripouille", 0, 42000));
 }
 */
