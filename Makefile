@@ -6,14 +6,14 @@
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 18:03:30 by awallet           #+#    #+#              #
-#    Updated: 2022/05/09 14:46:54 by nlorion          ###   ########.fr        #
+#    Updated: 2022/05/10 17:10:52 by nlorion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC =   ft_atoi.c \
-       		ft_bzero.c \
+		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
@@ -36,10 +36,10 @@ SRC =   ft_atoi.c \
 		ft_memchr.c \
 		ft_strlen.c \
 		ft_strrchr.c \
-#		ft_strtrim.c \
-#		ft_strjoin.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
 #		ft_split.c \
-		       
+		
 OBJS = $(SRC:.c=.o)
 
 COMPILER_COMMAND = gcc
