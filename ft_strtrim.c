@@ -54,12 +54,3 @@ char	*ft_strtrim(const char *s1, const char *set)
 	tab[j] = '\0';
 	return (str = tab);	
 }
-/*
-int	main(void)
-{
-	char	*str = "xxxholicxxx";
-	char	*set = "x";
-
-	printf("%s", ft_strtrim(str, set));
-}
-*/

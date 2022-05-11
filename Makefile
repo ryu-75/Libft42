@@ -38,7 +38,7 @@ SRC =   ft_atoi.c \
 		ft_strrchr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-#		ft_split.c \
+		ft_split.c \
 		
 OBJS = $(SRC:.c=.o)
 
