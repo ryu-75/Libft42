@@ -6,7 +6,7 @@
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 18:03:30 by awallet           #+#    #+#              #
-#    Updated: 2022/05/10 17:10:52 by nlorion          ###   ########.fr        #
+#    Updated: 2022/05/12 11:33:53 by nlorion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,12 @@ SRC =   ft_atoi.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
 		ft_split.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+#		ft_putnbr_fd.c \			
+#		ft_striteri_fd.c \
+#		ft_strmapi_fd.c \
 		
 OBJS = $(SRC:.c=.o)
 
