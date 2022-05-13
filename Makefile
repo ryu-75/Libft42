@@ -6,7 +6,7 @@
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 18:03:30 by awallet           #+#    #+#              #
-#    Updated: 2022/05/12 13:37:11 by nlorion          ###   ########.fr        #
+#    Updated: 2022/05/13 17:38:24 by nlorion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,8 @@ SRC =   ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_striteri.c \
 		ft_strmapi.c \
+		ft_itoa.c \
+		ft_split.c \
 	
 OBJS = $(SRC:.c=.o)
 
