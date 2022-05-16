@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
+#    By: nlorion <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/02 18:03:30 by awallet           #+#    #+#              #
-#    Updated: 2022/05/13 17:38:24 by nlorion          ###   ########.fr        #
+#    Created: 2022/05/16 16:43:56 by nlorion           #+#    #+#              #
+#    Updated: 2022/05/16 20:19:08 by nlorion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,18 @@ SRC =   ft_atoi.c \
 	
 OBJS = $(SRC:.c=.o)
 
+BONUS =		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+
+BONUS_OBJS = $(BONUS:.c=.o)
+
 COMPILER_COMMAND = gcc
 
 AR = ar rcs
@@ -68,11 +80,14 @@ $(NAME): $(OBJS)
 all:	$(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re:	fclean all
+
+bonus:	$(OBJS) $(BONUS_OBJS)
+	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY : all bonus clean fclean re
