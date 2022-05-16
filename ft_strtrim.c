@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:51:53 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/10 17:02:27 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/16 15:05:28 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_search(const char *str, const char c)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -45,12 +45,12 @@ char	*ft_strtrim(const char *s1, const char *set)
 	}
 	while (s1[i] && ft_search(set, s1[len - 1]))
 		len--;
-	tab = malloc(sizeof(char) * len -  i + 1);
+	tab = malloc(sizeof(char) * len - i + 1);
 	if (!tab)
 		return (NULL);
 	j = 0;
 	while (i < len)
 		tab[j++] = s1[i++];
 	tab[j] = '\0';
-	return (str = tab);	
+	return (str = tab);
 }

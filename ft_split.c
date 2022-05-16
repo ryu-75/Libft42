@@ -6,13 +6,13 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:58:15 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/13 17:56:03 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/16 15:08:55 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_freeTab(char **str, int size)
+static int	ft_freetab(char **str, int size)
 {
 	while (str[size] != NULL)
 	{
@@ -28,11 +28,11 @@ static int	ft_countword(char const *s, char set)
 	int	word;
 
 	i = 0;
-	word = 0;	
+	word = 0;
 	while (s[i] != '\0')
 	{
-		if ((s[i + 1] == set || s[i + 1] == '\0') == 1 
-		&& (s[i] == set || s[i] == '\0') == 0)
+		if ((s[i + 1] == set || s[i + 1] == '\0') == 1
+			&& (s[i] == set || s[i] == '\0') == 0)
 			word++;
 		i++;
 	}
@@ -71,54 +71,26 @@ static int	ft_splitword(char **tab, char const *str, char set)
 				j++;
 			tab[word] = (char *)malloc(sizeof(char) * (j + 1));
 			if (!tab[word])
-				return(ft_freeTab(tab, word - 1));
+				return (ft_freetab(tab, word - 1));
 			ft_writeword(tab[word], str + i, set);
 			i += j;
 			word++;
 		}
 	}
-	return (0);	
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
-	int	word;
+	int		word;
 
 	word = ft_countword(s, c);
 	tab = (char **)malloc(sizeof(char *) * (word + 1));
 	if (!(tab))
 		return (NULL);
 	tab[word] = 0;
-	if(ft_splitword(tab, s, c) == -1)
+	if (ft_splitword(tab, s, c) == -1)
 		return (NULL);
 	return (tab);
 }
-/*
-int main(int argc, char **argv)
-{
-	
-	//char	*test = "bonjour, je suis, la";
-    	size_t	i;
-	
-	i = 0;
-
-	if (argc == 2)
-	{
-		if (argv[1])
-		{
-			char	**str = ft_split(argv[1], ' ');
-			while (str[i] != NULL)
-			{
-       		 		printf("%s\n", str[i]);
-				i++;
-			}
-		}
-	}
-	else
-	{
-		printf("\n");
-	}
-    	return (0);
-}
-*/

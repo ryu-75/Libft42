@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 14:07:46 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/16 15:09:34 by nlorion          ###   ########.fr       */
+/*   Created: 2022/05/16 17:55:35 by nlorion           #+#    #+#             */
+/*   Updated: 2022/05/16 19:59:00 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*newstr;
-	char	*tab;
+	t_list	*first;
+	t_list	*new;
 
-	newstr = NULL;
-	newstr = malloc(ft_strlen(s1) + ft_strlen(s2) + sizeof(char));
-	if (!newstr)
+	new = ft_lstnew((*f)(lst->content));
+	first = NULL;
+	if (!lst || !f || !del)
 		return (NULL);
-	tab = newstr;
-	while (*s1 != '\0')
-		*newstr++ = *s1++;
-	while (*s2 != '\0')
-		*newstr++ = *s2++;
-	*newstr = '\0';
-	return (tab);
+	while (lst)
+	{	
+		if (new)
+		{
+			while (first)
+			{
+				new = first->next;
+				del(first->content);
+				free(first);
+				first = new;
+			}
+			lst = NULL;
+			return (NULL);
+		}
+	}
+	ft_lstadd_back(&first, new);
+	lst = lst->next;	
+	return (first);
 }
