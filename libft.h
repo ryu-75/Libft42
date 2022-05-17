@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:17:17 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/16 20:21:05 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/17 14:44:57 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -23,7 +23,7 @@
 
 typedef struct s_list
 {
-	void		*content;
+	void			*content;
 	struct s_list	*next;
 }			t_list;
 

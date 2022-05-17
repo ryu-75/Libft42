@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 17:38:14 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/16 17:55:01 by nlorion          ###   ########.fr       */
+/*   Created: 2022/05/17 13:49:06 by nlorion           #+#    #+#             */
+/*   Updated: 2022/05/17 13:49:07 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	{
 		while (lst)
 		{
-			f(lst->content);	
-			lst = lst->next;	
+			f(lst->content);
+			lst = lst->next;
 		}
 	}
 }

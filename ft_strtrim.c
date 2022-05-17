@@ -6,13 +6,13 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:51:53 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/16 15:05:28 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/17 14:53:29 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_search(const char *str, const char c)
+static int	ft_search(const char *str, const char c)
 {
 	size_t	i;
 

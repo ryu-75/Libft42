@@ -6,7 +6,7 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:25:29 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/07 20:42:32 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/17 14:55:26 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	char s[] = {0, 1, 2, 3, 4, 5};
-	printf("%p\n", ft_memchr(s, 2, 3));
-}
-*/

@@ -6,13 +6,13 @@
 /*   By: nlorion <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:07:26 by nlorion           #+#    #+#             */
-/*   Updated: 2022/05/09 18:18:28 by nlorion          ###   ########.fr       */
+/*   Updated: 2022/05/17 14:54:53 by nlorion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strnlen(const char *s, size_t n)
+static size_t	ft_strnlen(const char *s, size_t n)
 {
 	size_t	i;
 
