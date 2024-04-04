@@ -16,10 +16,8 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*tmp;
 	char	*ptr;
-	char	ch;
 
 	tmp = NULL;
-	ch = c;
 	ptr = strchr(s, c);
 	if (c == '\0')
 		return (strchr(s, '\0'));
